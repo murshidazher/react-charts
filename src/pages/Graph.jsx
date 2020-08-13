@@ -69,9 +69,30 @@ function Graph() {
   };
 
   const handleListItemPress = (id, event) => {
-    const addSeries = search(id, jobs);
-    addSeries.id = id;
-    setSeries([...series, addSeries]);
+    if (!isExist(id)) {
+      const addSeries = search(id, jobs);
+      addSeries.id = id;
+      setSeries([...series, addSeries]);
+    } else {
+      const filteredArr = removeJob(id);
+      setSeries([...filteredArr]);
+    }
+  };
+
+  const isExist = (id) => {
+    for (var i = 0; i < series.length; i++) {
+      if (series[i].id === id) {
+        return true;
+      }
+    }
+
+    return false;
+  };
+
+  const removeJob = (id) => {
+    return series.filter(function (job) {
+      return job.id !== id;
+    });
   };
 
   const options = {
