@@ -2,17 +2,18 @@
 
 > A demonstration of dynamic dashboard charts
 
-- **Dashboard**— demonstrate [react](https://styled-components.com) with [apex-chart](https://storybook.js.org/) and to build a highly interactive dashboard with data visualization.
+- **Dashboard** — demonstrate [react](https://styled-components.com) with [apex-chart](https://storybook.js.org/) and to build a highly interactive dashboard with data visualization.
 
 ## Installing / Getting started
 
 A quick introduction of the minimal setup you need to get a up & running.
 
+**Step 1** : Clone the repository
 ```sh
 $ git clone https://github.com/murshidazher/react-charts.git && cd react-charts
 ```
 
-Then
+**Step 2** : Install the project dependencies
 
 ```sh
 $ npm i

@@ -1,5 +1,7 @@
 import React from "react";
 import "../App.css";
+import { css } from "@emotion/core";
+import ChartList from "../components/ChartList";
 import ReactApexChart from "react-apexcharts";
 
 import "./Graphs.css";
@@ -269,15 +271,23 @@ function Graph() {
       }}
     >
       <br />
-      <h2>COVID-19 Global Graphs</h2>
+      <h2>Graphs</h2>
       <br />
-      <ReactApexChart
-        options={options}
-        series={series}
-        type="line"
-        height={350}
-        width={800}
-      />
+      <div
+        css={css`
+        display: flex;
+        flex-direction: row;
+      `}
+      >
+        <ReactApexChart
+          options={options}
+          series={series}
+          type="line"
+          height={350}
+          width={800}
+        />
+        <ChartList/>
+      </div>
       <br />
       <ReactApexChart
         options={options}

@@ -6,7 +6,7 @@ function Nav() {
   return (
     <nav>
       <Link style={{ color: "white", textDecoration: "none" }} to="/">
-        <div style={{ fontSize: "30px" }}>📈</div>
+        <div style={{ fontSize: "30px" }}><span role="img" aria-label="Graph">📈</span></div>
       </Link>
       <ul className="nav-links">
         <Link
