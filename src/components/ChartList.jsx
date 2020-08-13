@@ -1,81 +1,123 @@
 import React from "react";
-// import { css, keyframes } from "@emotion/core";
+import { css } from "emotion";
 import PropTypes from "prop-types";
-import "./ColorList.css";
+import "./ColorList.scss";
+import { Button } from "react-bootstrap";
 
 const ChartList = (props) => {
   return (
     <div className="chart-list">
-      <header className="color__wrapper">
+      <header className="header__wrapper">
         <div className="color__left">
           <span>Available Job Postings</span>
           <span className="header__total-tag">40</span>
         </div>
         <div className="color__right">
-          <button>Desc</button>
+          <Button
+            type="button"
+            size="sm"
+            className={css`
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              border-color: rgb(228 228 228);
+            `}
+            variant="outline-secondary"
+          >
+            Desc
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="button__icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </Button>
         </div>
       </header>
-      <div className="color__wrapper">
-        <div className="color__left">
-          <div className="color__placeholder"></div>
-          <span>UX Developer</span>
+      <div className="color__body">
+        <div className="color__wrapper">
+          <div className="color__left">
+            <div className="color__placeholder"></div>
+            <span>UX Developer</span>
+          </div>
+          <div className="color__right">
+            <span>#UXD158</span>
+          </div>
         </div>
-        <div className="color__right">
-          <span>#UXD158</span>
+        <div className="color__wrapper selected">
+          <div className="color__left">
+            <div className="color__placeholder">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-check"
+              >
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span>UI Developer</span>
+          </div>
+          <div className="color__right">
+            <span>#UID864</span>
+          </div>
         </div>
-      </div>
-      <div className="color__wrapper">
-        <div className="color__left">
-          <div className="color__placeholder"></div>
-          <span>UI Developer</span>
+        <div className="color__wrapper">
+          <div className="color__left">
+            <div className="color__placeholder"></div>
+            <span>Software Engineer</span>
+          </div>
+          <div className="color__right">
+            <span>#SE150</span>
+          </div>
         </div>
-        <div className="color__right">
-          <span>#UID864</span>
+        <div className="color__wrapper">
+          <div className="color__left">
+            <div className="color__placeholder"></div>
+            <span>Senior SE</span>
+          </div>
+          <div className="color__right">
+            <span>#SE1864</span>
+          </div>
         </div>
-      </div>
-      <div className="color__wrapper">
-        <div className="color__left">
-          <div className="color__placeholder"></div>
-          <span>Software Engineer</span>
+        <div className="color__wrapper">
+          <div className="color__left">
+            <div className="color__placeholder"></div>
+            <span>HR Manager</span>
+          </div>
+          <div className="color__right">
+            <span>#HRM15</span>
+          </div>
         </div>
-        <div className="color__right">
-          <span>#SE150</span>
+        <div className="color__wrapper">
+          <div className="color__left">
+            <div className="color__placeholder"></div>
+            <span>Frontend Developer</span>
+          </div>
+          <div className="color__right">
+            <span>#FED158</span>
+          </div>
         </div>
-      </div>
-      <div className="color__wrapper">
-        <div className="color__left">
-          <div className="color__placeholder"></div>
-          <span>Senior SE</span>
-        </div>
-        <div className="color__right">
-          <span>#SE1864</span>
-        </div>
-      </div>
-      <div className="color__wrapper">
-        <div className="color__left">
-          <div className="color__placeholder"></div>
-          <span>HR Manager</span>
-        </div>
-        <div className="color__right">
-          <span>#HRM15</span>
-        </div>
-      </div>
-      <div className="color__wrapper">
-        <div className="color__left">
-          <div className="color__placeholder"></div>
-          <span>Frontend Developer</span>
-        </div>
-        <div className="color__right">
-          <span>#FED158</span>
-        </div>
-      </div>
-      <div className="color__wrapper">
-        <div className="color__left">
-          <div className="color__placeholder"></div>
-          <span>Backend Developer</span>
-        </div>
-        <div className="color__right">
-          <span>#BD158</span>
+        <div className="color__wrapper">
+          <div className="color__left">
+            <div className="color__placeholder"></div>
+            <span>Backend Developer</span>
+          </div>
+          <div className="color__right">
+            <span>#BD158</span>
+          </div>
         </div>
       </div>
     </div>

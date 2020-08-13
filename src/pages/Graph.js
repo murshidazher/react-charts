@@ -3,6 +3,7 @@ import "../App.css";
 import { css } from "emotion";
 import ChartList from "../components/ChartList";
 import ReactApexChart from "react-apexcharts";
+import { Button, ButtonGroup } from "react-bootstrap";
 
 import "./Graphs.css";
 
@@ -34,7 +35,7 @@ function Graph() {
   const options = {
     chart: {
       toolbar: {
-        show: true,
+        show: false,
         offsetX: 0,
         offsetY: -4.5,
         tools: {
@@ -273,28 +274,115 @@ function Graph() {
       <br />
       <h2>Dashboard</h2>
       <br />
-      <div
-        className={css`
-        display: flex;
-        flex-direction: row;
-      `}
-      >
-        <ReactApexChart
-          options={options}
-          series={series}
-          type="line"
-          height={350}
-          width={800}
-        />
-        <ChartList/>
+      <div>
+        <div
+          
+        >
+          <div className={css`
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          margin: 0 40px;
+        `}>
+            <div
+              className={css`
+              align-items: flex-start;
+              display: flex;
+              flex-direction: column;
+            
+
+
+              h5 {
+                margin-bottom: 4px;
+              }
+              .subtitle {
+                color: #BEBEBE;
+                font-weight: 700;
+              }
+
+            `}
+            >
+              <h5>Job Application Trends</h5>
+              <h6 className="text-uppercase"><small className="subtitle ">Values Depend on Criteria Match</small></h6>
+            </div>
+            <div>
+              <ButtonGroup aria-label="Basic example">
+              <Button variant="secondary">Line</Button>
+              <Button variant="secondary">Bar</Button>
+            </ButtonGroup>
+            <Button
+              type="button"
+              size="md"
+              className={css`
+                padding: .5rem;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                border-color: rgb(228 228 228);
+              `}
+              variant="outline-secondary"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="button__icon nm"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </Button>
+            </div>
+          </div>
+          <div>
+            <select name="source" id="">
+              <option value="all">All Sources</option>
+              <option value="ikman">Ikman</option>
+              <option value="topjobs">Top Jobs</option>
+              <option value="linkedin">Linkedin</option>
+            </select>
+            <select name="criteria" id="">
+              <option value="received">Received</option>
+              <option value="accepted">Accepted</option>
+              <option value="rejected">Rejected</option>
+            </select>
+            <select name="range" id="">
+              <option value="day">Day</option>
+              <option value="week">Week</option>
+              <option value="month">Month</option>
+            </select>
+          </div>
+          
+        </div>
+        <div
+          className={css`
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+        `}
+        >
+          <ReactApexChart
+            options={options}
+            series={series}
+            type="line"
+            height={350}
+            width={800}
+          />
+          <ChartList/>
+        </div>
+        <br />
       </div>
-      <br />
-      <ReactApexChart
+      {/* <ReactApexChart
         options={options}
         series={series}
         type="bar"
         height={350}
-      />
+      /> */}
     </div>
   );
 }
