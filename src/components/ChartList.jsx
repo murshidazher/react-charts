@@ -5,6 +5,7 @@ import "./ColorList.scss";
 import { Button } from "react-bootstrap";
 
 const ChartList = ({ jobs, selected, handleListItemPress }) => {
+  // search the array to find if a particular record exists
   const search = (nameKey, myArray) => {
     for (var i = 0; i < myArray.length; i++) {
       if (myArray[i].id === nameKey) {
