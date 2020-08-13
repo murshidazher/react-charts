@@ -43,10 +43,12 @@ const jobs = {
 
 const exSeries = [
   {
-    name: "UX Enginner",
+    id: "UID864",
+    name: "UI Developer",
     data: generateRandomNumber(0, 50, 31),
   },
   {
+    id: "HRM15",
     name: "HR Manager",
     data: generateRandomNumber(0, 50, 31),
   },

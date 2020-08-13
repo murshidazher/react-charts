@@ -5,6 +5,18 @@ import "./ColorList.scss";
 import { Button } from "react-bootstrap";
 
 const ChartList = ({ jobs, selected }) => {
+  const search = (nameKey, myArray) => {
+    for (var i = 0; i < myArray.length; i++) {
+      if (myArray[i].id === nameKey) {
+        return true;
+      }
+    }
+  };
+
+  const handleListItemPress = (id, event) => {
+    alert(id);
+  };
+
   return (
     <div className="chart-list">
       <header className="header__wrapper">
@@ -43,39 +55,24 @@ const ChartList = ({ jobs, selected }) => {
         </div>
       </header>
       <div className="color__body">
-        <div className="color__wrapper selected">
-          <div className="color__left">
-            <div className="color__placeholder">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="feather feather-check"
-              >
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
+        {Object.entries(jobs).map(([key, value]) => {
+          const util = search(key, selected) ? "selected" : "";
+          return (
+            <div
+              key={key}
+              className={`color__wrapper ${util}`}
+              onClick={(e) => handleListItemPress(key, e)}
+            >
+              <div className="color__left">
+                <div className="color__placeholder"></div>
+                <span>{value.title}</span>
+              </div>
+              <div className="color__right">
+                <span>{key}</span>
+              </div>
             </div>
-            <span>UI Developer</span>
-          </div>
-          <div className="color__right">
-            <span>#UID864</span>
-          </div>
-        </div>
-        {Object.entries(jobs).map(([key, value]) => (
-          <div key={key} className="color__wrapper">
-            <div className="color__left">
-              <div className="color__placeholder"></div>
-              <span>{value.title}</span>
-            </div>
-            <div className="color__right">
-              <span>{key}</span>
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );
