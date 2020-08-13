@@ -1,6 +1,6 @@
 import React from "react";
 import "../App.css";
-import { css } from "@emotion/core";
+import { css } from "emotion";
 import ChartList from "../components/ChartList";
 import ReactApexChart from "react-apexcharts";
 
@@ -271,10 +271,10 @@ function Graph() {
       }}
     >
       <br />
-      <h2>Graphs</h2>
+      <h2>Dashboard</h2>
       <br />
       <div
-        css={css`
+        className={css`
         display: flex;
         flex-direction: row;
       `}
