@@ -43,15 +43,6 @@ const ChartList = ({ jobs, selected }) => {
         </div>
       </header>
       <div className="color__body">
-        <div className="color__wrapper">
-          <div className="color__left">
-            <div className="color__placeholder"></div>
-            <span>UX Developer</span>
-          </div>
-          <div className="color__right">
-            <span>#UXD158</span>
-          </div>
-        </div>
         <div className="color__wrapper selected">
           <div className="color__left">
             <div className="color__placeholder">
@@ -74,90 +65,21 @@ const ChartList = ({ jobs, selected }) => {
             <span>#UID864</span>
           </div>
         </div>
-        <div className="color__wrapper">
-          <div className="color__left">
-            <div className="color__placeholder"></div>
-            <span>Software Engineer</span>
+        {Object.entries(jobs).map(([key, value]) => (
+          <div key={key} className="color__wrapper">
+            <div className="color__left">
+              <div className="color__placeholder"></div>
+              <span>{value.title}</span>
+            </div>
+            <div className="color__right">
+              <span>{key}</span>
+            </div>
           </div>
-          <div className="color__right">
-            <span>#SE150</span>
-          </div>
-        </div>
-        <div className="color__wrapper">
-          <div className="color__left">
-            <div className="color__placeholder"></div>
-            <span>Senior SE</span>
-          </div>
-          <div className="color__right">
-            <span>#SE1864</span>
-          </div>
-        </div>
-        <div className="color__wrapper">
-          <div className="color__left">
-            <div className="color__placeholder"></div>
-            <span>HR Manager</span>
-          </div>
-          <div className="color__right">
-            <span>#HRM15</span>
-          </div>
-        </div>
-        <div className="color__wrapper">
-          <div className="color__left">
-            <div className="color__placeholder"></div>
-            <span>Frontend Developer</span>
-          </div>
-          <div className="color__right">
-            <span>#FED158</span>
-          </div>
-        </div>
-        <div className="color__wrapper">
-          <div className="color__left">
-            <div className="color__placeholder"></div>
-            <span>Backend Developer</span>
-          </div>
-          <div className="color__right">
-            <span>#BD158</span>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );
 };
-
-const jobs = [
-  {
-    id: "UX Developer",
-    title: "#UXD158",
-  },
-  {
-    id: "UI Developer",
-    title: "#UID864",
-  },
-  {
-    id: "Software Engineer",
-    title: "#SE150",
-  },
-  {
-    id: "aassa",
-    title: "asasasa",
-  },
-  {
-    id: "aassa",
-    title: "asasasa",
-  },
-  {
-    id: "aassa",
-    title: "asasasa",
-  },
-  {
-    id: "aassa",
-    title: "asasasa",
-  },
-  {
-    id: "aassa",
-    title: "asasasa",
-  },
-];
 
 ChartList.propTypes = {};
 

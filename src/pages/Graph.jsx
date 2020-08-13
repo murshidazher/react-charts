@@ -17,6 +17,30 @@ const generateRandomNumber = (min, max, num) => {
   return arr;
 };
 
+const jobs = {
+  UXD158: {
+    title: "UX Developer",
+  },
+  UID864: {
+    title: "UI Developer",
+  },
+  SE150: {
+    title: "Software Engineer",
+  },
+  SE1864: {
+    title: "Senior SE",
+  },
+  HRM15: {
+    title: "HR Manager",
+  },
+  FED158: {
+    title: "Frontend Developer",
+  },
+  BD158: {
+    title: "Backend Developer",
+  },
+};
+
 const exSeries = [
   {
     name: "UX Enginner",
@@ -442,7 +466,7 @@ function Graph() {
             height={350}
             width={"500px"}
           />
-          <ChartList jobs={["a"]} selected={series} />
+          <ChartList jobs={jobs} selected={series} />
         </div>
         <br />
       </div>
