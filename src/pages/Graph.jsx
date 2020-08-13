@@ -19,25 +19,32 @@ const generateRandomNumber = (min, max, num) => {
 
 const jobs = {
   UXD158: {
-    title: "UX Developer",
+    name: "UX Developer",
+    data: generateRandomNumber(0, 50, 31),
   },
   UID864: {
-    title: "UI Developer",
+    name: "UI Developer",
+    data: generateRandomNumber(0, 50, 31),
   },
   SE150: {
-    title: "Software Engineer",
+    name: "Software Engineer",
+    data: generateRandomNumber(0, 50, 31),
   },
   SE1864: {
-    title: "Senior SE",
+    name: "Senior SE",
+    data: generateRandomNumber(0, 50, 31),
   },
   HRM15: {
-    title: "HR Manager",
+    name: "HR Manager",
+    data: generateRandomNumber(0, 50, 31),
   },
   FED158: {
-    title: "Frontend Developer",
+    name: "Frontend Developer",
+    data: generateRandomNumber(0, 50, 31),
   },
   BD158: {
-    title: "Backend Developer",
+    name: "Backend Developer",
+    data: generateRandomNumber(0, 50, 31),
   },
 };
 
@@ -56,6 +63,16 @@ const exSeries = [
 
 function Graph() {
   const [series, setSeries] = useState(exSeries);
+
+  const search = (nameKey, myArray) => {
+    return myArray[nameKey];
+  };
+
+  const handleListItemPress = (id, event) => {
+    const addSeries = search(id, jobs);
+    addSeries.id = id;
+    setSeries([...series, addSeries]);
+  };
 
   const options = {
     chart: {
@@ -468,7 +485,11 @@ function Graph() {
             height={350}
             width={"500px"}
           />
-          <ChartList jobs={jobs} selected={series} />
+          <ChartList
+            jobs={jobs}
+            selected={series}
+            handleListItemPress={handleListItemPress}
+          />
         </div>
         <br />
       </div>

@@ -4,17 +4,13 @@ import PropTypes from "prop-types";
 import "./ColorList.scss";
 import { Button } from "react-bootstrap";
 
-const ChartList = ({ jobs, selected }) => {
+const ChartList = ({ jobs, selected, handleListItemPress }) => {
   const search = (nameKey, myArray) => {
     for (var i = 0; i < myArray.length; i++) {
       if (myArray[i].id === nameKey) {
         return true;
       }
     }
-  };
-
-  const handleListItemPress = (id, event) => {
-    alert(id);
   };
 
   return (
@@ -65,7 +61,7 @@ const ChartList = ({ jobs, selected }) => {
             >
               <div className="color__left">
                 <div className="color__placeholder"></div>
-                <span>{value.title}</span>
+                <span>{value.name}</span>
               </div>
               <div className="color__right">
                 <span>{key}</span>
