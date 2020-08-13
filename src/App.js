@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Graph from "./pages/Graph";
+import Graph from "./pages/Graph.jsx";
 import Nav from "./Nav";
 import Footer from "./Footer";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";

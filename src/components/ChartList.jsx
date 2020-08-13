@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import "./ColorList.scss";
 import { Button } from "react-bootstrap";
 
-const ChartList = (props) => {
+const ChartList = ({ jobs, selected }) => {
   return (
     <div className="chart-list">
       <header className="header__wrapper">
@@ -27,13 +27,13 @@ const ChartList = (props) => {
             Desc
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="button__icon"
+              className="button__icon"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               aria-hidden="true"
               focusable="false"
             >
@@ -60,10 +60,10 @@ const ChartList = (props) => {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-check"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="feather feather-check"
               >
                 <polyline points="20 6 9 17 4 12"></polyline>
               </svg>
@@ -123,6 +123,41 @@ const ChartList = (props) => {
     </div>
   );
 };
+
+const jobs = [
+  {
+    id: "UX Developer",
+    title: "#UXD158",
+  },
+  {
+    id: "UI Developer",
+    title: "#UID864",
+  },
+  {
+    id: "Software Engineer",
+    title: "#SE150",
+  },
+  {
+    id: "aassa",
+    title: "asasasa",
+  },
+  {
+    id: "aassa",
+    title: "asasasa",
+  },
+  {
+    id: "aassa",
+    title: "asasasa",
+  },
+  {
+    id: "aassa",
+    title: "asasasa",
+  },
+  {
+    id: "aassa",
+    title: "asasasa",
+  },
+];
 
 ChartList.propTypes = {};
 
