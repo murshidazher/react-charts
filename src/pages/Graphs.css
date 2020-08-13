@@ -1,0 +1,9 @@
+.apexcharts-legend-text {
+  padding-left: 8px;
+}
+
+.apexcharts-toolbar {
+  position: absolute;
+  /* right: auto; */
+  left: 10px;
+}
